@@ -52,3 +52,4 @@ Get started with Rasa Pro in the browser using GitHub Codespaces.
 
 RUNNING THE RASA IN WEBSITE:
     rasa run --enable-api --cors "*"
+    ```
