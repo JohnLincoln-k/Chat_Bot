@@ -1,0 +1,540 @@
+version: "3.1"
+
+intents:
+- affirm
+- ask_age_0_7
+- ask_age_13_22
+- ask_age_23_plus
+- ask_age_8_12
+- ask_health_tips
+- ask_health1_tips
+- ask_health2_tips
+- ask_medication
+- bot_challenge
+- deny
+- yes
+- co
+- headache
+- flu
+- diabetes
+- dehydration
+- paralysis
+- aids_hiv
+- stroke
+- malaria
+- cold
+- dengue
+- cancer
+
+- goodbye
+- greet
+- inform_age
+- inform_fever
+- inform_asthma
+- inform_cold
+- inform_cough
+- inform_headache
+- inform_covid
+- inform_flu
+- inform_cancer
+- inform_dengue
+- inform_malaria
+- inform_stroke
+- inform_aids_hiv
+- inform_paralysis
+- inform_dehydration
+- inform_diabetes
+- inform_duration
+- mood_great
+- mood_unhappy
+- request_medication
+
+
+entities:
+- disease
+- age
+- medications
+slots:
+  disease:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: disease
+  age:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: age
+
+responses:
+  utter_greet:
+    - text: Hello! How can I assist you today?
+  utter_ask_age:
+    - text: 'Please select your age group:'
+      buttons:
+      - title: 0-7
+        payload: /ask_age_0_7
+      - title: 8-12
+        payload: /ask_age_8_12
+      - title: 13-22
+        payload: /ask_age_13_22
+      - title: 23+
+        payload: /ask_age_23_plus
+
+
+  utter_fever1_tips:
+    - text: 'Here are some health tips for fever: tips[fever]'
+      buttons:
+      - title: Yes
+        payload: /affirm
+      - title: No
+        payload: /deny
+
+  utter_asthma1_tips:
+    - text: 'Here are some health tips for asthma: tips[asthma]'
+      buttons:
+      - title: Yes
+        payload: /ask_health_tips
+      - title: No
+        payload: /deny
+
+  utter_cough1_tips:
+    - text: 'Here are some health tips for cough: tips[cough]'
+      buttons:
+      - title: Yes
+        payload: /yes
+      - title: No
+        payload: /deny
+
+  utter_covid1_tips:
+    - text: 'Here are some health tips for covid: tips[covid]'
+      buttons:
+      - title: Yes
+        payload: /co
+      - title: No
+        payload: /deny
+
+  utter_headache1_tips:
+    - text: 'Here are some health tips for headache: tips[headache]'
+      buttons:
+      - title: Yes
+        payload: /headache
+      - title: No
+        payload: /deny
+
+  utter_flu1_tips:
+    - text: 'Here are some health tips for flu: tips[flu]'
+      buttons:
+      - title: Yes
+        payload: /flu
+      - title: No
+        payload: /deny
+
+  utter_cancer1_tips:
+      - text: 'Here are some health tips for cancer: '
+        buttons:
+        - title: Yes
+          payload: /cancer
+        - title: No
+          payload: /deny
+
+  utter_dengue1_tips:
+      - text: 'Here are some health tips for dengue: '
+        buttons:
+        - title: Yes
+          payload: /dengue
+        - title: No
+          payload: /deny
+
+  utter_cold1_tips:
+      - text: 'Here are some health tips for cold: '
+        buttons:
+        - title: Yes
+          payload: /cold
+        - title: No
+          payload: /deny
+
+  utter_malaria1_tips:
+      - text: 'Here are some health tips for malaria: '
+        buttons:
+        - title: Yes
+          payload: /malaria
+        - title: No
+          payload: /deny
+
+  utter_stroke1_tips:
+      - text: 'Here are some health tips for stroke: '
+        buttons:
+        - title: Yes
+          payload: /stroke
+        - title: No
+          payload: /deny
+
+  utter_aids_hiv1_tips:
+      - text: 'Here are some health tips for HIV/AIDS: '
+        buttons:
+        - title: Yes
+          payload: /aids_hiv
+        - title: No
+          payload: /deny
+
+  utter_paralysis1_tips:
+      - text: 'Here are some health tips for paralysis: '
+        buttons:
+        - title: Yes
+          payload: /paralysis
+        - title: No
+          payload: /deny
+
+  utter_dehydration1_tips:
+      - text: 'Here are some health tips for dehydration: '
+        buttons:
+        - title: Yes
+          payload: /dehydration
+        - title: No
+          payload: /deny
+
+  utter_diabetes1_tips:
+      - text: 'Here are some health tips for diabetes: '
+        buttons:
+        - title: Yes
+          payload: /diabetes
+        - title: No
+          payload: /deny
+
+
+  utter_fever_tips1:
+    - text: '0-7 years: If fever is above 100.4°F (38°C), consult a doctor immediately. Use lukewarm sponge baths..'
+  utter_fever_tips2:
+    - text: '8-12 years: Drink plenty of fluids, use a cold compress, and monitor symptoms'
+  utter_fever_tips3:
+    - text: '13-22 years: Stay hydrated, take fever-reducing medications like paracetamol if needed.'
+  utter_fever_tips4:
+    - text: '22+ years: Avoid alcohol, caffeine, and stress; seek medical attention if fever persists beyond 3 days.'
+
+  utter_asthma_tips1:
+    - text: ' Asthma is a long-term condition affecting children and adults. The air passages in the lungs become narrow due to inflammation and tightening of the muscles around the small airways.'
+
+  utter_cough_tips1:
+    - text: 'Keep hydrated, use a humidifier, try saline drops, give honey (if over 1 year), and consult a doctor for persistent cough.'
+  utter_cough_tips2:
+    - text: 'Warm water with honey/lemon, saltwater gargles, steam inhalation, proper rest, and consult a doctor before using cough syrups.'
+  utter_cough_tips3:
+    - text: 'Stay hydrated, avoid cold drinks, use lozenges or herbal teas, gargle with salt water, rest well, and see a doctor if it lasts over two weeks.'
+  utter_cough_tips4:
+    - text: ' Drink warm liquids, take honey or turmeric milk, inhale steam, avoid smoking/allergens, use OTC cough syrups if needed, and seek medical help if persistent.'
+
+  utter_covid_tips1:
+    - text: 'Ensure the child gets plenty of fluids and rest. Monitor for breathing difficulties, and consult a pediatrician if symptoms worsen.'
+  utter_covid_tips2:
+    - text: 'Encourage rest, monitor for any worsening symptoms, and consult a doctor if necessary. Keep them isolated to prevent spreading.'
+  utter_covid_tips3:
+    - text: 'Monitor for symptoms like fatigue, fever, and cough. Ensure they stay hydrated and isolated. If symptoms worsen (e.g., difficulty breathing), seek medical care.'
+  utter_covid_tips4:
+    - text: 'Stay hydrated, rest, and take over-the-counter pain relievers for symptom management. Seek medical help if symptoms worsen, especially if difficulty breathing, chest pain, or confusion arises.'
+
+  utter_flu_tips1:
+    - text: 'Ensure the child stays hydrated with water, clear soups, or electrolyte drinks. Keep them comfortable with light clothing and maintain a cool environment. Encourage plenty of rest, and monitor for any signs of worsening symptoms such as high fever or difficulty breathing.'
+  utter_flu_tips2:
+    - text: 'Encourage your preteen to rest and drink fluids frequently. Make sure they stay in a comfortable, cool environment and monitor their temperature regularly. If symptoms last more than a few days or worsen, contact a healthcare provider.'
+  utter_flu_tips3:
+    - text: 'Make sure your teen stays hydrated and takes frequent rest breaks. Monitor for any signs of complications, such as persistent fever, chest pain, or difficulty breathing. Encourage healthy nutrition and light activity as they start to feel better.'
+  utter_flu_tips4:
+    - text: 'Rest is crucial for recovery, so ensure you take it easy and hydrate regularly. Avoid alcohol or caffeine, as they can lead to dehydration. If symptoms worsen (e.g., difficulty breathing, chest pain, severe fatigue), seek medical attention immediately. Stay home to avoid spreading the flu to others.'
+
+  utter_headache_tips1:
+    - text: 'For headaches in children (0-7 years), tips include: Hydration, rest in a quiet, dark room, gentle head massage, and applying a cold compress on the forehead.' 
+  utter_headache_tips2:
+    - text: 'For headaches in preteens (8-12 years), tips include: Ensure adequate rest, hydration, limiting screen time, and applying a cold compress. Encourage relaxation and rest in a dark, quiet room.'  
+  utter_headache_tips3:
+    - text: 'For headaches in teenagers (13-22 years), tips include: Hydration, rest in a quiet, dark room, limiting screen time, and managing stress. Consider taking over-the-counter pain relievers like ibuprofen or acetaminophen (with medical guidance).' 
+  utter_headache_tips4:
+    - text: 'For headaches in adults (23+ years), tips include: Hydration, applying cold compresses, resting in a dark room, limiting screen time, and reducing stress. Over-the-counter pain relievers like ibuprofen or acetaminophen can be helpful (as directed by a healthcare provider).'
+
+  utter_cancer_tips1:
+    - text: 'For children (0-7 years) with cancer, tips include: Providing nutritious meals, encouraging rest, minimizing exposure to infections, and following the doctor’s prescribed treatment strictly.'
+  utter_cancer_tips2:
+    - text: 'For preteens (8-12 years) with cancer, tips include: Maintaining a balanced diet, keeping up with regular medical checkups, ensuring emotional support, and avoiding exposure to infections.'
+  utter_cancer_tips3:
+    - text: 'For teenagers (13-22 years) with cancer, tips include: Following treatment plans strictly, maintaining a healthy lifestyle, seeking emotional support, and avoiding stressors that weaken immunity.'
+  utter_cancer_tips4:
+    - text: 'For adults (23+ years) with cancer, tips include: Following a healthy diet, exercising moderately, reducing stress, staying hydrated, and attending all medical appointments for timely treatment.'
+
+  utter_dengue_tips1:
+    - text: 'For children (0-7 years) with dengue, tips include: Keeping them hydrated, monitoring for fever, avoiding mosquito bites, and seeking medical help if symptoms worsen.'
+  utter_dengue_tips2:
+    - text: 'For preteens (8-12 years) with dengue, tips include: Ensuring proper hydration, giving Paracetamol for fever, and avoiding Aspirin or Ibuprofen. Encourage rest and monitor symptoms.'
+  utter_dengue_tips3:
+    - text: 'For teenagers (13-22 years) with dengue, tips include: Staying well-hydrated, avoiding NSAIDs, resting, and monitoring platelet count to detect complications early.'
+  utter_dengue_tips4:
+    - text: 'For adults (23+ years) with dengue, tips include: Drinking plenty of fluids, taking Paracetamol for fever, avoiding alcohol and NSAIDs, and monitoring severe symptoms like bleeding or dizziness.'
+
+  utter_cold_tips1:
+    - text: 'For children (0-7 years) with a cold, tips include: Using saline drops, keeping them hydrated, using a humidifier, and allowing rest. Avoid over-the-counter medications unless prescribed.'
+  utter_cold_tips2:
+    - text: 'For preteens (8-12 years) with a cold, tips include: Encouraging rest, drinking warm fluids, using honey for cough (if over 1 year), and steam inhalation for congestion.'
+  utter_cold_tips3:
+    - text: 'For teenagers (13-22 years) with a cold, tips include: Staying hydrated, using decongestants if needed, gargling with salt water, and avoiding cold drinks.'
+  utter_cold_tips4:
+    - text: 'For adults (23+ years) with a cold, tips include: Drinking warm teas, using nasal decongestants, steam inhalation, and avoiding excessive exposure to cold environments.'
+
+  utter_malaria_tips1:
+    - text: 'For children (0-7 years) with malaria, tips include: Ensuring proper hydration, giving prescribed medications, and protecting them from mosquito bites with nets and repellents.'
+  utter_malaria_tips2:
+    - text: 'For preteens (8-12 years) with malaria, tips include: Following prescribed medications, staying hydrated, getting proper rest, and avoiding mosquito bites.'
+  utter_malaria_tips3:
+    - text: 'For teenagers (13-22 years) with malaria, tips include: Taking medications as prescribed, drinking plenty of fluids, and ensuring a mosquito-free environment.'
+  utter_malaria_tips4:
+    - text: 'For adults (23+ years) with malaria, tips include: Taking prescribed treatments on time, avoiding mosquito-prone areas, and using insect repellents and nets for protection.'
+
+  utter_stroke_tips1:
+    - text: 'For children (0-7 years) recovering from stroke, tips include: Providing a healthy diet, ensuring therapy sessions, and engaging them in gentle physical activities.'
+  utter_stroke_tips2:
+    - text: 'For preteens (8-12 years) recovering from stroke, tips include: Encouraging light physical therapy, providing nutritious meals, and regular medical check-ups to monitor progress.'
+  utter_stroke_tips3:
+    - text: 'For teenagers (13-22 years) recovering from stroke, tips include: Following rehabilitation exercises, eating a balanced diet, and managing stress levels to prevent recurrence.'
+  utter_stroke_tips4:
+    - text: 'For adults (23+ years) recovering from stroke, tips include: Managing blood pressure, following a heart-healthy diet, staying active, and avoiding smoking or alcohol.'
+
+  utter_aids_hiv_tips1:
+    - text: 'For children (0-7 years) with HIV/AIDS, tips include: Ensuring proper nutrition, following ART treatment, and avoiding infections through good hygiene practices.'
+  utter_aids_hiv_tips2:
+    - text: 'For preteens (8-12 years) with HIV/AIDS, tips include: Providing emotional support, ensuring ART medication adherence, and encouraging a balanced diet.'
+  utter_aids_hiv_tips3:
+    - text: 'For teenagers (13-22 years) with HIV/AIDS, tips include: Following ART therapy consistently, eating nutritious meals, and avoiding risky behaviors that could worsen immunity.'
+  utter_aids_hiv_tips4:
+    - text: 'For adults (23+ years) with HIV/AIDS, tips include: Sticking to prescribed ART medication, reducing stress, maintaining a healthy lifestyle, and preventing secondary infections.'
+
+  utter_paralysis_tips1:
+    - text: 'For children (0-7 years) with paralysis, tips include: Encouraging movement therapy, providing proper nutrition, and ensuring a safe, supportive environment for mobility.'
+  utter_paralysis_tips2:
+    - text: 'For preteens (8-12 years) with paralysis, tips include: Engaging in physical therapy, using assistive devices if needed, and ensuring a balanced diet for muscle recovery.'
+  utter_paralysis_tips3:
+    - text: 'For teenagers (13-22 years) with paralysis, tips include: Following therapy routines, staying active where possible, and focusing on mental well-being alongside physical health.'
+  utter_paralysis_tips4:
+    - text: 'For adults (23+ years) with paralysis, tips include: Practicing physical therapy, maintaining a proper diet, using assistive technologies, and preventing bedsores or complications.'
+
+  utter_dehydration_tips1:
+    - text: 'For children (0-7 years) with dehydration, tips include: Giving ORS frequently, avoiding sugary drinks, and keeping them in a cool environment.'
+  utter_dehydration_tips2:
+    - text: 'For preteens (8-12 years) with dehydration, tips include: Providing electrolyte-rich fluids, monitoring urine output, and encouraging frequent water intake.'
+  utter_dehydration_tips3:
+    - text: 'For teenagers (13-22 years) with dehydration, tips include: Drinking ORS or sports drinks, avoiding excessive caffeine, and staying hydrated during physical activity.'
+  utter_dehydration_tips4:
+    - text: 'For adults (23+ years) with dehydration, tips include: Drinking plenty of water, avoiding excessive alcohol or caffeine, and consuming foods rich in electrolytes.'
+
+  utter_diabetes_tips1:
+    - text: 'For children (0-7 years) with diabetes, tips include: Monitoring blood sugar levels, maintaining a balanced diet, and ensuring consistent insulin therapy.'
+  utter_diabetes_tips2:
+    - text: 'For preteens (8-12 years) with diabetes, tips include: Encouraging physical activity, eating fiber-rich foods, and following insulin or medication schedules strictly.'
+  utter_diabetes_tips3:
+    - text: 'For teenagers (13-22 years) with diabetes, tips include: Managing stress, exercising regularly, maintaining a healthy diet, and avoiding excessive sugar intake.'
+  utter_diabetes_tips4:
+    - text: 'For adults (23+ years) with diabetes, tips include: Monitoring blood sugar daily, maintaining a healthy weight, eating a low-carb diet, and following doctor’s prescriptions properly.'
+
+
+  utter_provide_medication:
+    - text: For {disease}, the common medications are {medications}.
+  utter_unknown_disease:
+    - text: Sorry, I don't have information about medications for {disease}.
+
+
+  utter_ask_disease:
+    - text: Which disease are you looking for medications for?
+
+  utter_goodbye:
+    - text: Take care and stay healthy!
+
+  utter_disease_info:
+  - condition:
+    - type: slot
+      name: disease
+    text: |
+      You have {disease}. 
+      Medications: {medications}. 
+      Health Tips: {tips}.
+
+  utter_iamabot:
+    - text: I am a Rasa-powered assistant. How can I help you?
+
+  utter_fever_child:
+    - text: 'For fever in children (0-7 years), recommended medications are: Paracetamol 100-250mg. Avoid ibuprofen.'
+  utter_fever_preteen:
+    - text: 'For fever in preteens (8-12 years), recommended medication is: Paracetamol 250-500mg.'
+  utter_fever_teen:
+  - text: 'For fever in teenagers (13-22 years), recommended medication is: Paracetamol 500mg.'
+  utter_fever_adult:
+    - text: 'For fever in adults (23+ years), recommended medications are: Paracetamol 500mg, Ibuprofen.'
+  utter_cough_child:
+    - text: 'For cough in children (0-7 years), recommended medication is: Honey-based syrups.'
+  utter_cough_preteen:
+    - text: 'For cough in preteens (8-12 years), recommended medications are: Dextromethorphan syrup.'
+  utter_cough_teen:
+    - text: 'For cough in teenagers (13-22 years), recommended medications are: Dextromethorphan, Antihistamines.'
+  utter_cough_adult:
+    - text: 'For cough in adults (23+ years), recommended medications are: Cough syrups with Codeine (if prescribed).'
+
+
+  utter_asthma_child:
+    - text: 'For asthma in children (0-7 years), recommended medication is: Salbutamol inhaler (doctor prescribed).'
+  utter_asthma_preteen:
+    - text: 'For asthma in preteens (8-14 years), recommended medications are: Salbutamol inhaler, Montelukast.'
+  utter_asthma_teen:
+    - text: 'For asthma in teenagers (15-22 years), recommended medications are: Salbutamol, Budesonide inhalers.'
+  utter_asthma_adult:
+    - text: 'For asthma in adults (23+ years), recommended medications are: Salbutamol inhalers, Corticosteroids.'
+
+  utter_covid_child:
+    - text: 'For children (0-7 years) with COVID-19, recommended treatment includes: Fever reducers like Acetaminophen (Tylenol), hydration, and rest. Antiviral medications like Paxlovid may be prescribed by a doctor for high-risk cases.'
+  utter_covid_preteen:
+    - text: 'For preteens (8-12 years) with COVID-19, recommended treatment includes: Fever reducers like Ibuprofen, hydration, and rest. Antiviral medications like Paxlovid may be prescribed for high-risk cases.'
+  utter_covid_teen:
+    - text: 'For teenagers (13-22 years) with COVID-19, recommended treatment includes: Fever reducers (Acetaminophen or Ibuprofen), hydration, rest, and potentially antiviral medications like Paxlovid if prescribed.'
+  utter_covid_adult:
+    - text: 'For adults (23+ years) with COVID-19, recommended treatments include: Fever reducers (Acetaminophen or Ibuprofen), hydration, rest, and antiviral medications like Paxlovid if prescribed. Severe cases may require additional treatments like monoclonal antibodies or hospitalization.'
+
+  utter_flu_child:
+    - text: 'For children (0-7 years) with the flu, recommended medications include: Fever reducers like Acetaminophen (Tylenol) or Ibuprofen (Advil), and rest. If prescribed by a doctor, antiviral medications like Oseltamivir (Tamiflu) may be given for severe cases.' 
+  utter_flu_preteen:
+    - text: 'For preteens (8-12 years) with the flu, recommended medications include: Fever reducers like Ibuprofen or Acetaminophen, and rest. Antiviral medications like Oseltamivir (Tamiflu) may be prescribed by a doctor for severe cases.'
+  utter_flu_teen:
+    - text: 'For teenagers (13-22 years) with the flu, recommended medications include: Fever reducers like Acetaminophen or Ibuprofen, and rest. Antiviral medications like Oseltamivir (Tamiflu) or Zanamivir (Relenza) may be prescribed if necessary.'
+  utter_flu_adult:
+    - text: 'For adults (23+ years) with the flu, recommended medications include: Fever reducers like Acetaminophen or Ibuprofen, and rest. For severe cases, antiviral medications like Oseltamivir (Tamiflu), Zanamivir (Relenza), or Baloxavir (Xofluza) may be prescribed.'
+
+  utter_headache_child:
+    - text: 'For headaches in children (0-7 years), recommended medication is: Hydration and mild pain relief.'
+  utter_headache_preteen:
+    - text: 'For headaches in preteens (8-14 years), recommended medication is: Paracetamol 250-500mg.'
+  utter_headache_teen:
+    - text: 'For headaches in teenagers (15-22 years), recommended medication is: Paracetamol 500mg, Ibuprofen (if necessary).'
+  utter_headache_adult:
+    - text: 'For headaches in adults (23+ years), recommended medications are: Paracetamol, Ibuprofen, or Naproxen.'
+
+  utter_cancer_child:
+    - text: 'For cancer treatment in children (0-7 years), common medications include Methotrexate and Vincristine. Always follow an oncologist’s guidance.'
+  utter_cancer_preteen:
+    - text: 'For cancer treatment in preteens (8-12 years), common medications include Cyclophosphamide and Doxorubicin. Consult a specialist for precise treatment.'
+  utter_cancer_teen:
+    - text: 'For cancer treatment in teenagers (13-22 years), targeted therapies like Imatinib or chemotherapy drugs like Cisplatin are used under medical supervision.'
+  utter_cancer_adult:
+    - text: 'For cancer treatment in adults (23+ years), chemotherapy drugs like Paclitaxel, targeted therapy like Bevacizumab, or immunotherapy may be used based on cancer type.'
+
+  utter_dengue_child:
+    - text: 'For dengue in children (0-7 years), give only Paracetamol for fever and ensure proper hydration. Avoid Aspirin and Ibuprofen.'
+  utter_dengue_preteen:
+    - text: 'For dengue in preteens (8-12 years), administer Paracetamol 250mg for fever. Hydration and rest are crucial.'
+  utter_dengue_teen:
+    - text: 'For dengue in teenagers (13-22 years), Paracetamol 500mg is recommended for fever. Avoid NSAIDs and monitor platelet count.'
+  utter_dengue_adult:
+    - text: 'For dengue in adults (23+ years), take Paracetamol 500mg-650mg for fever, drink plenty of fluids, and monitor for severe symptoms.'
+
+  utter_cold_child:
+    - text: 'For cold in children (0-7 years), saline nasal drops, honey (if over 1 year), and steam inhalation help. Avoid over-the-counter cold medications.'
+  utter_cold_preteen:
+    - text: 'For cold in preteens (8-12 years), use antihistamines like Cetirizine 5mg and saline drops. Warm fluids help relieve symptoms.'
+  utter_cold_teen:
+    - text: 'For cold in teenagers (13-22 years), use Cetirizine 10mg for congestion and Dextromethorphan for cough relief.'
+  utter_cold_adult:
+    - text: 'For cold in adults (23+ years), use antihistamines like Loratadine 10mg, decongestants like Pseudoephedrine, and Dextromethorphan for cough.'
+
+  utter_malaria_child:
+    - text: 'For malaria in children (0-7 years), recommended treatment includes Artemether-Lumefantrine or Chloroquine (as per doctor’s advice).'
+  utter_malaria_preteen:
+    - text: 'For malaria in preteens (8-12 years), Artemisinin-based combination therapies (ACT) are recommended.'
+  utter_malaria_teen:
+    - text: 'For malaria in teenagers (13-22 years), Artemether-Lumefantrine or Quinine-based treatments are commonly prescribed.'
+  utter_malaria_adult:
+    - text: 'For malaria in adults (23+ years), treatment includes Artemisinin combination therapy (ACT) and Primaquine for complete cure.'
+
+  utter_stroke_child:
+    - text: 'For stroke in children (0-7 years), emergency care is needed. Antiplatelet therapy like Aspirin is rarely used in pediatric cases.'
+  utter_stroke_preteen:
+    - text: 'For stroke in preteens (8-12 years), clot-busting drugs like Alteplase may be used in emergency cases under medical supervision.'
+  utter_stroke_teen:
+    - text: 'For stroke in teenagers (13-22 years), treatment may involve blood thinners like Clopidogrel and physical therapy.'
+  utter_stroke_adult:
+    - text: 'For stroke in adults (23+ years), medications include Aspirin, Clopidogrel, and statins to reduce stroke risk.'
+
+  utter_aids_hiv_child:
+    - text: 'For HIV/AIDS in children (0-7 years), antiretroviral therapy (ART) includes drugs like Zidovudine and Lamivudine under strict medical supervision.'
+  utter_aids_hiv_preteen:
+    - text: 'For HIV/AIDS in preteens (8-12 years), ART includes Tenofovir, Lamivudine, and Efavirenz as per doctor’s prescription.'
+  utter_aids_hiv_teen:
+    - text: 'For HIV/AIDS in teenagers (13-22 years), ART with Tenofovir, Efavirenz, and Dolutegravir helps suppress the virus.'
+  utter_aids_hiv_adult:
+    - text: 'For HIV/AIDS in adults (23+ years), treatment includes a combination of Tenofovir, Emtricitabine, and Dolutegravir for viral suppression.'
+
+  utter_paralysis_child:
+    - text: 'For paralysis in children (0-7 years), treatment includes physiotherapy and muscle relaxants if necessary under medical supervision.'
+  utter_paralysis_preteen:
+    - text: 'For paralysis in preteens (8-12 years), muscle relaxants like Baclofen and physiotherapy help in recovery.'
+  utter_paralysis_teen:
+    - text: 'For paralysis in teenagers (13-22 years), medications like Tizanidine and physical rehabilitation improve mobility.'
+  utter_paralysis_adult:
+    - text: 'For paralysis in adults (23+ years), treatment may include muscle relaxants, blood thinners for stroke-related paralysis, and rehabilitation therapy.'
+
+  utter_dehydration_child:
+    - text: 'For dehydration in children (0-7 years), oral rehydration solution (ORS) is the best treatment. Avoid sugary drinks.'
+  utter_dehydration_preteen:
+    - text: 'For dehydration in preteens (8-12 years), use ORS and electrolyte solutions like Pedialyte. Encourage fluid intake.'
+  utter_dehydration_teen:
+    - text: 'For dehydration in teenagers (13-22 years), oral rehydration, IV fluids in severe cases, and electrolyte-rich drinks help recovery.'
+  utter_dehydration_adult:
+    - text: 'For dehydration in adults (23+ years), drink ORS, electrolyte solutions, and in severe cases, IV fluids may be required.'
+
+  utter_diabetes_child:
+    - text: 'For diabetes in children (0-7 years), Insulin therapy is the primary treatment under endocrinologist guidance.'
+  utter_diabetes_preteen:
+    - text: 'For diabetes in preteens (8-12 years), Insulin therapy and dietary management help control blood sugar.'
+  utter_diabetes_teen:
+    - text: 'For diabetes in teenagers (13-22 years), Metformin is commonly prescribed for type 2 diabetes, along with lifestyle changes.'
+  utter_diabetes_adult:
+    - text: 'For diabetes in adults (23+ years), medications like Metformin, Sulfonylureas, and Insulin therapy are used based on severity.'
+
+
+
+actions:
+- utter_greet
+- utter_ask_age
+- utter_medications
+- utter_health_tips
+- utter_goodbye
+- utter_disease_info
+- action_suggest_medication
+- utter_medication_child
+- utter_medication_preteen
+- utter_medication_teen
+- utter_medication_adult
+- utter__iamabot
+- utter_fever_child
+- utter_fever_preteen
+- utter_fever_teen
+- utter_fever_adult
+- utter_medication_cough_child
+- utter_medication_cough_preteen
+- utter_medication_cough_teen
+- utter_medication_cough_adult
+- utter_medication__preteen
+- utter_asthma_child
+- utter_asthma_preteen
+- utter_asthma_teen
+- utter_asthma_adult
+- action_fever_tips
+- action_asthma_tips
+- action_cough_tips
+- action_headache_tips
+# - utter_fever_tips1
+# - utter_fever_tips2
+# - utter_fever_tips3
+# - utter_fever_tips4
+# - utter_asthma_tips1
+# - utter_cough_tips1
+# - utter_cough_tips2
+# - utter_cough_tips3
+# - utter_cough_tips4
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
