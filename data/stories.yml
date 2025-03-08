@@ -1,0 +1,888 @@
+version: "3.1"
+
+stories:
+- story: Greet and ask for disease
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_ask_disease 
+
+##fever 
+- story: Suggest medication fever for a child (0-7 years)
+  steps:
+    - intent: inform_fever
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "fever"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_fever_child
+    - action: utter_fever1_tips
+    - intent: affirm
+    - action: utter_fever_tips1
+
+- story: Suggest medication for a child (8-12 years)
+  steps:
+    - intent: inform_fever
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "fever"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_fever_preteen
+    - action: utter_fever1_tips
+    - intent: affirm
+    - action: utter_fever_tips2
+
+- story: Suggest medication for a child (13-22 years)
+  steps:
+    - intent: inform_fever
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "fever"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_fever_teen
+    - action: utter_fever1_tips
+    - intent: affirm
+    - action: utter_fever_tips3
+
+- story: Suggest medication for a child (23+ years)
+  steps:
+    - intent: inform_fever
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "fever"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_fever_adult
+    - action: utter_fever1_tips
+    - intent: affirm
+    - action: utter_fever_tips4
+
+##ASTHAMA
+- story: Suggest medication asthma for a child (0-7 years)
+  steps:
+    - intent: inform_asthma
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "asthma"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_asthma_child
+    - action: utter_asthma1_tips
+    - intent: ask_health_tips
+    - action: utter_asthma_tips1
+
+- story: Suggest medication for a child (8-12 years)
+  steps:
+    - intent: inform_asthma
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "asthma"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_asthma_preteen
+    - action: utter_asthma1_tips
+    - intent: ask_health_tips
+    - action: utter_asthma_tips1
+
+- story: Suggest medication for a child (13-22 years)
+  steps:
+    - intent: inform_asthma
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "asthma"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_asthma_teen
+    - action: utter_asthma1_tips
+    - intent: ask_health_tips
+    - action: utter_asthma_tips1
+
+- story: Suggest medication for a child (23+ years)
+  steps:
+    - intent: inform_asthma
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "asthma"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_asthma_adult
+    - action: utter_asthma1_tips
+    - intent: ask_health_tips
+    - action: utter_asthma_tips1
+
+## Covid 19
+- story: Suggest medication covid for a child (0-7 years)
+  steps:
+    - intent: inform_covid
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "covid"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_covid_child
+    - action: utter_covid1_tips
+    - intent: co
+    - action: utter_covid_tips1
+
+- story: Suggest medication for a child (8-12 years)
+  steps:
+    - intent: inform_covid
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "covid"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_covid_preteen
+    - action: utter_covid1_tips
+    - intent: co
+    - action: utter_covid_tips2
+
+- story: Suggest medication for a child (13-22 years)
+  steps:
+    - intent: inform_covid
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "covid"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_covid_teen
+    - action: utter_covid1_tips
+    - intent: co
+    - action: utter_covid_tips3
+
+- story: Suggest medication for a child (23+ years)
+  steps:
+    - intent: inform_covid
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "covid"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_covid_adult
+    - action: utter_covid1_tips
+    - intent: co
+    - action: utter_covid_tips4
+
+## headache 
+- story: Suggest medication headache for a child (0-7 years)
+  steps:
+    - intent: inform_headache
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "headache"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_headache_child
+    - action: utter_headache1_tips
+    - intent: headache
+    - action: utter_headache_tips1
+
+- story: Suggest medication for a child (8-12 years)
+  steps:
+    - intent: inform_headache
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "headache"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_headache_preteen
+    - action: utter_headache1_tips
+    - intent: headache
+    - action: utter_headache_tips2
+
+- story: Suggest medication for a child (13-22 years)
+  steps:
+    - intent: inform_headache
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "headache"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_headache_teen
+    - action: utter_headache1_tips
+    - intent: headache
+    - action: utter_headache_tips3
+
+- story: Suggest medication for a child (23+ years)
+  steps:
+    - intent: inform_headache
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "headache"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_headache_adult
+    - action: utter_headache1_tips
+    - intent: headache
+    - action: utter_headache_tips4
+
+## Cough
+- story: Suggest medication cough for a child (0-7 years)
+  steps:
+    - intent: inform_cough
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "cough"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_cough_child
+    - action: utter_cough1_tips
+    - intent: yes
+    - action: utter_cough_tips1
+
+- story: Suggest medication for a child (8-12 years)
+  steps:
+    - intent: inform_cough
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "cough"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_cough_preteen
+    - action: utter_cough1_tips
+    - intent: yes
+    - action: utter_cough_tips1
+
+- story: Suggest medication for a child (13-22 years)
+  steps:
+    - intent: inform_cough
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "cough"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_cough_teen
+    - action: utter_cough1_tips
+    - intent: yes
+    - action: utter_cough_tips1
+
+- story: Suggest medication for a child (23+ years)
+  steps:
+    - intent: inform_cough
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "cough"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_cough_adult
+    - action: utter_cough1_tips
+    - intent: yes
+    - action: utter_cough_tips1
+
+## flu 
+- story: Suggest medication flu for a child (0-7 years)
+  steps:
+    - intent: inform_flu
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "flu"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_flu_child
+    - action: utter_flu1_tips
+    - intent: flu
+    - action: utter_flu_tips1
+
+- story: Suggest medication for a child (8-12 years)
+  steps:
+    - intent: inform_flu
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "flu"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_flu_preteen
+    - action: utter_flu1_tips
+    - intent: flu
+    - action: utter_flu_tips2
+
+- story: Suggest medication for a child (13-22 years)
+  steps:
+    - intent: inform_flu
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "flu"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_flu_teen
+    - action: utter_flu1_tips
+    - intent: flu
+    - action: utter_flu_tips3
+
+- story: Suggest medication for a child (23+ years)
+  steps:
+    - intent: inform_flu
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "flu"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_flu_adult
+    - action: utter_flu1_tips
+    - intent: flu
+    - action: utter_flu_tips4
+
+
+## Cancer
+- story: Suggest medication for cancer in a child (0-7 years)
+  steps:
+    - intent: inform_cancer
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "cancer"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_cancer_child
+    - action: utter_cancer1_tips
+    - intent: cancer
+    - action: utter_cancer_tips1
+
+- story: Suggest medication for cancer in a preteen (8-12 years)
+  steps:
+    - intent: inform_cancer
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "cancer"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_cancer_preteen
+    - action: utter_cancer1_tips
+    - intent: cancer
+    - action: utter_cancer_tips2
+
+- story: Suggest medication for cancer in a teenager (13-22 years)
+  steps:
+    - intent: inform_cancer
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "cancer"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_cancer_teen
+    - action: utter_cancer1_tips
+    - intent: cancer
+    - action: utter_cancer_tips3
+
+- story: Suggest medication for cancer in an adult (23+ years)
+  steps:
+    - intent: inform_cancer
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "cancer"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_cancer_adult
+    - action: utter_cancer1_tips
+    - intent: cancer
+    - action: utter_cancer_tips4
+
+## Dengue
+- story: Suggest medication for dengue in a child (0-7 years)
+  steps:
+    - intent: inform_dengue
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "dengue"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_dengue_child
+    - action: utter_dengue1_tips
+    - intent: dengue
+    - action: utter_dengue_tips1
+
+- story: Suggest medication for dengue in a preteen (8-12 years)
+  steps:
+    - intent: inform_dengue
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "dengue"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_dengue_preteen
+    - action: utter_dengue1_tips
+    - intent: dengue
+    - action: utter_dengue_tips2
+
+- story: Suggest medication for dengue in a teenager (13-22 years)
+  steps:
+    - intent: inform_dengue
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "dengue"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_dengue_teen
+    - action: utter_dengue1_tips
+    - intent: dengue
+    - action: utter_dengue_tips3
+
+- story: Suggest medication for dengue in an adult (23+ years)
+  steps:
+    - intent: inform_dengue
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "dengue"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_dengue_adult
+    - action: utter_dengue1_tips
+    - intent: dengue
+    - action: utter_dengue_tips4
+
+
+
+# - story: User asks for health tips
+#   steps:
+#     - intent: ask_health_tips
+#     - action: utter_health_tips
+
+## cold
+- story: Suggest medication for cold in a child (0-7 years)
+  steps:
+    - intent: inform_cold
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "cold"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_cold_child
+    - action: utter_cold1_tips
+    - intent: cold
+    - action: utter_cold_tips1
+
+- story: Suggest medication for cold in a preteen (8-12 years)
+  steps:
+    - intent: inform_cold
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "cold"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_cold_preteen
+    - action: utter_cold1_tips
+    - intent: cold
+    - action: utter_cold_tips2
+
+- story: Suggest medication for cold in a teenager (13-22 years)
+  steps:
+    - intent: inform_cold
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "cold"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_cold_teen
+    - action: utter_cold1_tips
+    - intent: cold
+    - action: utter_cold_tips3
+
+- story: Suggest medication for cold in an adult (23+ years)
+  steps:
+    - intent: inform_cold
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "cold"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_cold_adult
+    - action: utter_cold1_tips
+    - intent: cold
+    - action: utter_cold_tips4
+
+## malaria
+- story: Suggest medication for malaria in a child (0-7 years)
+  steps:
+    - intent: inform_malaria
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "malaria"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_malaria_child
+    - action: utter_malaria1_tips
+    - intent: malaria
+    - action: utter_malaria_tips1
+
+- story: Suggest medication for malaria in a preteen (8-12 years)
+  steps:
+    - intent: inform_malaria
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "malaria"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_malaria_preteen
+    - action: utter_malaria1_tips
+    - intent: malaria
+    - action: utter_malaria_tips2
+
+- story: Suggest medication for malaria in a teenager (13-22 years)
+  steps:
+    - intent: inform_malaria
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "malaria"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_malaria_teen
+    - action: utter_malaria1_tips
+    - intent: malaria
+    - action: utter_malaria_tips3
+
+- story: Suggest medication for malaria in an adult (23+ years)
+  steps:
+    - intent: inform_malaria
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "malaria"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_malaria_adult
+    - action: utter_malaria1_tips
+    - intent: malaria
+    - action: utter_malaria_tips4
+
+
+## stroke
+- story: Suggest medication for stroke in a child (0-7 years)
+  steps:
+    - intent: inform_stroke
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "stroke"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_stroke_child
+    - action: utter_stroke1_tips
+    - intent: stroke
+    - action: utter_stroke_tips1
+
+- story: Suggest medication for stroke in a preteen (8-12 years)
+  steps:
+    - intent: inform_stroke
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "stroke"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_stroke_preteen
+    - action: utter_stroke1_tips
+    - intent: stroke
+    - action: utter_stroke_tips2
+
+- story: Suggest medication for stroke in a teenager (13-22 years)
+  steps:
+    - intent: inform_stroke
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "stroke"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_stroke_teen
+    - action: utter_stroke1_tips
+    - intent: stroke
+    - action: utter_stroke_tips3
+
+- story: Suggest medication for stroke in an adult (23+ years)
+  steps:
+    - intent: inform_stroke
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "stroke"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_stroke_adult
+    - action: utter_stroke1_tips
+    - intent: stroke
+    - action: utter_stroke_tips4
+
+## aids_hiv
+- story: Suggest medication for aids_hiv in a child (0-7 years)
+  steps:
+    - intent: inform_aids_hiv
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "aids_hiv"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_aids_hiv_child
+    - action: utter_aids_hiv1_tips
+    - intent: aids_hiv
+    - action: utter_aids_hiv_tips1
+
+- story: Suggest medication for aids_hiv in a preteen (8-12 years)
+  steps:
+    - intent: inform_aids_hiv
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "aids_hiv"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_aids_hiv_preteen
+    - action: utter_aids_hiv1_tips
+    - intent: aids_hiv
+    - action: utter_aids_hiv_tips2
+
+- story: Suggest medication for aids_hiv in a teenager (13-22 years)
+  steps:
+    - intent: inform_aids_hiv
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "aids_hiv"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_aids_hiv_teen
+    - action: utter_aids_hiv1_tips
+    - intent: aids_hiv
+    - action: utter_aids_hiv_tips3
+
+- story: Suggest medication for aids_hiv in an adult (23+ years)
+  steps:
+    - intent: inform_aids_hiv
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "aids_hiv"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_aids_hiv_adult
+    - action: utter_aids_hiv1_tips
+    - intent: aids_hiv
+    - action: utter_aids_hiv_tips4
+
+## paralysis
+- story: Suggest medication for paralysis in a child (0-7 years)
+  steps:
+    - intent: inform_paralysis
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "paralysis"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_paralysis_child
+    - action: utter_paralysis1_tips
+    - intent: paralysis
+    - action: utter_paralysis_tips1
+
+- story: Suggest medication for paralysis in a preteen (8-12 years)
+  steps:
+    - intent: inform_paralysis
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "paralysis"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_paralysis_preteen
+    - action: utter_paralysis1_tips
+    - intent: paralysis
+    - action: utter_paralysis_tips2
+
+- story: Suggest medication for paralysis in a teenager (13-22 years)
+  steps:
+    - intent: inform_paralysis
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "paralysis"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_paralysis_teen
+    - action: utter_paralysis1_tips
+    - intent: paralysis
+    - action: utter_paralysis_tips3
+
+- story: Suggest medication for paralysis in an adult (23+ years)
+  steps:
+    - intent: inform_paralysis
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "paralysis"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_paralysis_adult
+    - action: utter_paralysis1_tips
+    - intent: paralysis
+    - action: utter_paralysis_tips4
+
+## dehydration
+- story: Suggest medication for dehydration in a child (0-7 years)
+  steps:
+    - intent: inform_dehydration
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "dehydration"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_dehydration_child
+    - action: utter_dehydration1_tips
+    - intent: dehydration
+    - action: utter_dehydration_tips1
+
+- story: Suggest medication for dehydration in a preteen (8-12 years)
+  steps:
+    - intent: inform_dehydration
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "dehydration"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_dehydration_preteen
+    - action: utter_dehydration1_tips
+    - intent: dehydration
+    - action: utter_dehydration_tips2
+
+- story: Suggest medication for dehydration in a teenager (13-22 years)
+  steps:
+    - intent: inform_dehydration
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "dehydration"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_dehydration_teen
+    - action: utter_dehydration1_tips
+    - intent: dehydration
+    - action: utter_dehydration_tips3
+
+- story: Suggest medication for dehydration in an adult (23+ years)
+  steps:
+    - intent: inform_dehydration
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "dehydration"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_dehydration_adult
+    - action: utter_dehydration1_tips
+    - intent: dehydration
+    - action: utter_dehydration_tips4
+
+## diabetes
+- story: Suggest medication for diabetes in a child (0-7 years)
+  steps:
+    - intent: inform_diabetes
+    - action: utter_ask_age
+    - intent: ask_age_0_7
+    - slot_was_set:
+        - disease: "diabetes"
+    - slot_was_set:
+        - age: "5"
+    - action: utter_diabetes_child
+    - action: utter_diabetes1_tips
+    - intent: diabetes
+    - action: utter_diabetes_tips1
+
+- story: Suggest medication for diabetes in a preteen (8-12 years)
+  steps:
+    - intent: inform_diabetes
+    - action: utter_ask_age
+    - intent: ask_age_8_12
+    - slot_was_set:
+        - disease: "diabetes"
+    - slot_was_set:
+        - age: "9"
+    - action: utter_diabetes_preteen
+    - action: utter_diabetes1_tips
+    - intent: diabetes
+    - action: utter_diabetes_tips2
+
+- story: Suggest medication for diabetes in a teenager (13-22 years)
+  steps:
+    - intent: inform_diabetes
+    - action: utter_ask_age
+    - intent: ask_age_13_22
+    - slot_was_set:
+        - disease: "diabetes"
+    - slot_was_set:
+        - age: "16"
+    - action: utter_diabetes_teen
+    - action: utter_diabetes1_tips
+    - intent: diabetes
+    - action: utter_diabetes_tips3
+
+- story: Suggest medication for diabetes in an adult (23+ years)
+  steps:
+    - intent: inform_diabetes
+    - action: utter_ask_age
+    - intent: ask_age_23_plus
+    - slot_was_set:
+        - disease: "diabetes"
+    - slot_was_set:
+        - age: "33"
+    - action: utter_diabetes_adult
+    - action: utter_diabetes1_tips
+    - intent: diabetes
+    - action: utter_diabetes_tips4
+
+- story: User asks for medication directly
+  steps:
+    - intent: ask_medication
+    - action: utter_medications
+
+- story: User says goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: User challenges bot identity
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+

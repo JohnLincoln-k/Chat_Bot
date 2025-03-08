@@ -1,0 +1,369 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: request_medication
+  examples: |
+    - What medication should I take for [fever](condition)?
+    - I have a [cough](condition), what should I take?
+    - Can you recommend medication for [headache](condition)?
+    
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: inform_asthma
+  examples: |
+    - asthma
+    - astma
+    - asthm
+    - I have asthma
+    - I'm suffering from asthma 
+
+- intent: inform_cold
+  examples: |
+    - cold
+    - I have cold
+    - cod
+    - col
+    - I'm suffering from cold
+
+- intent: inform_flu
+  examples: |
+    - flu
+    - I have flu
+    - ful
+    - fl
+    - I'm suffering from flu
+
+- intent: inform_cough
+  examples: |
+    - cough
+    - I have cough
+    - couh
+    - coug
+    - I'm suffering from cough
+
+- intent: inform_headache
+  examples: |
+    - headache
+    - I have headache
+    - headace
+    - headpain
+    - head pain
+    - I'm suffering from headache
+
+- intent: inform_fever
+  examples: |
+    - fever
+    - I'm suffering from fever
+    - I have fever
+    - fev
+    - fevre
+- intent: inform_covid
+  examples: |
+    - covid_19
+    - covid
+    - i have covid
+    - i am suffering from covid.
+    - covid_19
+
+- intent: inform_cancer
+  examples: |
+    - cancer
+    - canser
+    - can
+    - i have cancer
+    - i am suffering from cancer
+    - diagnosed with cancer
+    - cancer patient
+
+- intent: inform_dengue
+  examples: |
+    - dengue
+    - dengu
+    - i have dengue
+    - i am suffering from dengue
+    - diagnosed with dengue
+    - dengue fever
+
+- intent: inform_cold
+  examples: |
+    - cold
+    - i have a cold
+    - i am suffering from a cold
+    - common cold
+    - runny nose and sneezing
+
+- intent: inform_malaria
+  examples: |
+    - malaria
+    - maleria
+    - ma
+    - i have malaria
+    - i am suffering from malaria
+    - diagnosed with malaria
+    - mosquito bite fever
+
+- intent: inform_stroke
+  examples: |
+    - st
+    - stroke
+    - i had a stroke
+    - i am recovering from a stroke
+    - diagnosed with stroke
+    - brain stroke
+
+- intent: inform_aids_hiv
+  examples: |
+    - HIV
+    - AIDS
+    - aids
+    - hiv
+    - i have HIV
+    - i am suffering from AIDS
+    - diagnosed with HIV/AIDS
+    - positive for HIV
+
+- intent: inform_paralysis
+  examples: |
+    - para
+    - paralysis
+    - i have paralysis
+    - i am suffering from paralysis
+    - diagnosed with paralysis
+    - partial paralysis
+
+- intent: inform_dehydration
+  examples: |
+    - de
+    - dehydration
+    - i am dehydrated
+    - suffering from dehydration
+    - need fluids
+    - low water intake
+
+- intent: inform_diabetes
+  examples: |
+    - dia
+    - diabetes
+    - i have diabetes
+    - i am diabetic
+    - diagnosed with diabetes
+    - high blood sugar
+
+
+
+- intent: inform_age
+  examples: |
+    - I am 5 years old
+    - I am 12
+    - My age is 20
+    - I am 30 years old
+    - I am 50
+    - I am 8 years old
+    - I am 15
+    - I am 22
+    - I am 45
+
+- intent: ask_age_0_7
+  examples: |
+    - 0-7
+    - I am 5 years old
+    - Age group 0-7
+
+- intent: ask_age_8_12
+  examples: |
+    - 8-12
+    - I am 10 years old
+    - Age group 8-12
+
+- intent: ask_age_13_22
+  examples: |
+    - 13-22
+    - I am 18 years old
+    - Age group 13-22
+
+- intent: ask_age_23_plus
+  examples: |
+    - 23+
+    - I am 25 years old
+    - Age group 23+
+
+- intent: ask_medication
+  examples: |
+    - What medicine should I take?
+    - Can you recommend some medication?
+    - What are the medicines for this disease?
+    - Is there any treatment for this?
+    - give me a medication
+
+
+- intent: ask_health_tips
+  examples: |
+    - yes
+    - How can I recover fast?
+    - What precautions should I take?
+    - Can you give me health tips?
+    - How to prevent this disease?
+
+- intent: select_age_group
+  examples: |
+    - [0-7](age_group)
+    - [8-12](age_group)
+    - [13-22](age_group)
+    - [23+](age_group)
+    
+- intent: yes
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: co
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: headache
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: flu
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: diabetes
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: dehydration
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: paralysis
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: aids_hiv
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: stroke
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: malaria
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: cold
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: dengue
+  examples: |
+    - yes
+    - y
+    - s
+
+- intent: cancer
+  examples: |
+    - yes
+    - y
+    - s
