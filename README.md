@@ -51,5 +51,6 @@ Get started with Rasa Pro in the browser using GitHub Codespaces.
    Then re-run your assistant via `rasa inspect` every time you make changes to your custom actions.
 
 RUNNING THE RASA IN WEBSITE:
+
     rasa run --enable-api --cors "*"
-    ```
+   
